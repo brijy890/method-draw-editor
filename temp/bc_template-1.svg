@@ -1,0 +1,50 @@
+<svg width="525" height="300" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="302" width="527" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" height="348" width="156" y="-17.8" x="-13.5" stroke-width="0" stroke="#000" fill="#7f003f"/>
+  <foreignObject stroke="#000" xml:space="preserve" id="svg_2" height="74.000004" width="200" y="19.778" x="414.5" stroke-opacity="null" stroke-width="0" fill="#7f003f">
+   <div stroke="null" style="vector-effect: non-scaling-stroke;" id="div_svg_2">
+    <div style="vector-effect: non-scaling-stroke;" stroke="null" align="left" id="div_div_svg_2" contenteditable="true">
+     <p>
+      <span style="font-size:24px">NAME</span>
+      <br/>
+      <em>Designation</em>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <foreignObject stroke="#000" xml:space="preserve" id="svg_3" height="75.999999" width="388.000011" y="199.772" x="154.03" stroke-opacity="null" stroke-width="0" fill="#7f003f">
+   <div style="vector-effect: non-scaling-stroke;" stroke="null" id="div_svg_3">
+    <div style="vector-effect: non-scaling-stroke;" stroke="null" align="left" id="div_div_svg_3" contenteditable="true">
+     <p>No - 45, N Block, Kuvempunagar
+      <br/>Mysore - 570023
+      <br/>Ph : 0821-4000048 Mob : 8050247240
+      <br/>Email : kt_suri@yahoo.com</p>
+    </div>
+   </div>
+  </foreignObject>
+  <path stroke="#000" id="svg_5" d="m47.000002,48.996515l0,0c0,-11.321847 9.178176,-20.500019 20.500028,-20.500019l0,0c5.436943,0 10.651208,2.159816 14.495706,6.004315c3.844502,3.844501 6.004322,9.058759 6.004322,14.495704l0,0c0,11.321845 -9.178176,20.500019 -20.500028,20.500019l0,0c-11.32185,0 -20.500028,-9.178173 -20.500028,-20.500019zm10.250014,0l0,0c0,5.660922 4.589091,10.250009 10.250014,10.250009c5.660927,0 10.250014,-4.589087 10.250014,-10.250009c0,-5.660922 -4.589089,-10.250009 -10.250014,-10.250009l0,0c-5.660923,0 -10.250014,4.589089 -10.250014,10.250009z" stroke-opacity="null" stroke-width="0" fill="#ffffff"/>
+  <foreignObject stroke="#000" xml:space="preserve" id="svg_6" height="47" width="56" y="66.859" x="47.006252" stroke-opacity="null" stroke-width="0" fill="#ffffff">
+   <div style="vector-effect: non-scaling-stroke;" stroke="null" id="div_svg_6">
+    <div style="vector-effect: non-scaling-stroke;" stroke="null" align="left" id="div_div_svg_6" contenteditable="true">
+     <p style="vector-effect: non-scaling-stroke;" stroke="null">
+      <span stroke="null" style="color: rgb(255, 255, 255); vector-effect: non-scaling-stroke;">
+       <strong style="vector-effect: non-scaling-stroke;" stroke="null">
+        <span stroke="null" style="font-size: 14px; vector-effect: non-scaling-stroke;">LOGO</span>
+       </strong>
+      </span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <path opacity="0.25" id="svg_7" d="m6.5,285.2c0,0 129,-57 129,-57c0,0 0,31.016125 -0.5,30.8c0.5,0.216125 -128.5,26.2 -128.5,26.2z" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff"/>
+ </g>
+
+</svg>

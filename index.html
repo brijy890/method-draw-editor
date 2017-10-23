@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<link rel="icon" type="image/png" href="images/logo.png"/>
+
+<!--{if svg_edit_release}>
+  <link rel="stylesheet" href="css/method-draw.compiled.css" type="text/css"/>
+<!{else}-->
+  <link rel="stylesheet" href="lib/jgraduate/css/jPicker.css" type="text/css"/>
+  <link rel="stylesheet" href="lib/jgraduate/css/jgraduate.css" type="text/css"/>
+  <link rel="stylesheet" href="css/method-draw.css" type="text/css"/>
+  <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+  <link rel="stylesheet" href="css/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css" type="text/css"/>
+  <link rel="stylesheet" href="lib/jquery-modal/jquery.modal.css" type="text/css"/>
+<!--{endif}-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+  <script type="text/javascript" src="lib/jquery.js"></script>
+
+
+<!--{if svg_edit_release}>
+  <script type="text/javascript" src="method-draw.compiled.js"></script>
+<!{else}-->
+  <script type="text/javascript" src="lib/pathseg.js"></script>
+  <script type="text/javascript" src="lib/touch.js"></script>
+  <script type="text/javascript" src="lib/js-hotkeys/jquery.hotkeys.min.js"></script>
+  <script type="text/javascript" src="icons/jquery.svgicons.js"></script>
+  <script type="text/javascript" src="lib/jgraduate/jquery.jgraduate.js"></script>
+  <script type="text/javascript" src="lib/contextmenu/jquery.contextMenu.js"></script>
+  <script type="text/javascript" src="lib/jquery-ui/jquery-ui-1.8.17.custom.min.js"></script>
+  <script type="text/javascript" src="src/browser.js"></script>
+  <script type="text/javascript" src="src/svgtransformlist.js"></script>
+  <script type="text/javascript" src="src/math.js"></script>
+  <script type="text/javascript" src="src/units.js"></script>
+  <script type="text/javascript" src="src/svgutils.js"></script>
+  <script type="text/javascript" src="src/sanitize.js"></script>
+  <script type="text/javascript" src="src/history.js"></script>
+  <script type="text/javascript" src="src/select.js"></script>
+  <script type="text/javascript" src="src/draw.js"></script>
+  <script type="text/javascript" src="src/path.js"></script>
+  <script type="text/javascript" src="src/dialog.js"></script>
+  <script type="text/javascript" src="src/svgcanvas.js"></script>
+  <script type="text/javascript" src="src/method-draw.js"></script>
+  <script type="text/javascript" src="lib/jquery-draginput.js"></script>
+  <script type="text/javascript" src="lib/contextmenu.js"></script>
+  <script type="text/javascript" src="lib/jgraduate/jpicker.min.js"></script>
+  <script type="text/javascript" src="lib/mousewheel.js"></script>
+  <script type="text/javascript" src="extensions/ext-eyedropper.js"></script>
+  <script type="text/javascript" src="extensions/ext-shapes.js"></script>
+  <script type="text/javascript" src="extensions/ext-grid.js"></script>
+  <script type="text/javascript" src="lib/requestanimationframe.js"></script>
+  <script type="text/javascript" src="lib/taphold.js"></script>
+  <script type="text/javascript" src="lib/filesaver.js"></script>
+  <script type="text/javascript" src="lib/js-pdf/jspdf.min.js"></script>
+  <script type="text/javascript" src="lib/js-pdf/saveSvgAsPng.js"></script>
+<!--
+  <script type="text/javascript" src="lib/medium/rangy-core.js"></script>
+  <script type="text/javascript" src="lib/medium/rangy-classapplier.js"></script>
+  <script type="text/javascript" src="lib/medium/undo.js"></script>
+  <script type="text/javascript" src="lib/medium/medium.js"></script>-->
+
+  <script src="lib/jquery-modal/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="lib/ckeditor/ckeditor.js"></script>
+
+
+  
+<!--{endif}-->
+
+
+<title>Method Draw</title>
+</head>
+<body>
+
+<!--
+<svg width="1536" height="398" id="svgroot" xlinkns="http://www.w3.org/1999/xlink">
+<foreignObject fill="#000000" stroke="#000" stroke-width="0" x="184.5" y="142.2" width="200px" height="50px" id="svg_21" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve"><div id="svg_22" contenteditable="false" class="cke_editable cke_editable_inline cke_contents_ltr" tabindex="0" spellcheck="false" role="textbox" aria-label="Rich Text Editor, svg_22" title="Rich Text Editor, svg_22"><div id="editor1" contenteditable="true">
+    <h1>Inline Editing in Action!</h1>
+    <p>The "div" element that contains this text is now editable.
+</div>
+</foreignObject>
+</svg>
+
+<button type="button" data-toggle="modal" data-target="#modalAddBrand">Launch modal</button>
+<div class="modal fade" id="modalAddBrand" tabindex="-1" role="dialog" aria-labelledby="modalAddBrandLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title" id="modalAddBrandLabel">add</h4>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <textarea name="editor1" id="editor1" rows="10" cols="80">This is my textarea to be replaced with CKEditor.</textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="AddBrandButton" type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div id="svg_editor_cont">
+<div id="svg_editor">
+
+<!---->
+<div id="rulers">
+  <!-- <div id="ruler_corner"></div> -->
+  <div id="ruler_x">
+    <div id="ruler_x_cursor"></div>
+    <div>
+      <canvas height="15"></canvas>
+    </div>
+  </div>
+  <div id="ruler_y">
+    <div id="ruler_y_cursor"></div>
+    <div>
+      <canvas width="15"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<div id="tab_cont" style="width:400px;background-color: #3f4652; height:100%; position: absolute; z-index: 100; left: -410px;">
+  <div id="menu_tabs" style="width: 70px; height: 100%; background-color: #272c33; ">
+    <span id="selectedTab"><span></span><span></span></span>
+    <li class="shapes">
+        <a href="#">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                <polygon points="0 9 5.1 0.2 10.2 9 " fill="#FFFFFF" fill-opacity="0"></polygon>
+                <path d="M5.1 3.7l2.1 3.6H3L5.1 3.7M5.1 0.2L0 9h10.2L5.1 0.2 5.1 0.2z"></path>
+                <rect fill-opacity="0" x="12" y="5" width="7" height="7"></rect>
+                <path d="M17.2 6.8v3.5h-3.5V6.8H17.2M19 5h-7v7h7V5L19 5z"></path>
+                <circle fill-opacity="0" cx="8" cy="16" r="4"></circle>
+                <path d="M8 13.8c1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2-2.2-1-2.2-2.2S6.8 13.8 8 13.8M8 12c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4S10.2 12 8 12L8 12z"></path>
+            </svg> Shapes </a>
+    </li>
+    <li class="images">
+        <a href="#">
+          <div id="images_menu_btn"><i class="arrow fa fa-picture-o" style="font-size: 20px;"></i></div> Images </a>
+    </li>
+    <li class="text"> <a href="#"> <svg viewBox="0 0 22 22"><path d="M2 6l2-2h6v14l-2 2h6l-2-2V4h6l2 2V2H2z"></path></svg> Templates </a> </li>     
+    <li class="patterns">
+        <a href="#">
+            <svg viewBox="0 0 22 22">
+                <path d="M2.3 4.2c-.3 0-.5 0-.7-.2-.3-.3-.3-.9 0-1.2l1.1-1.1c.3-.3.9-.3 1.2 0 .4.3.4.9.1 1.2L2.9 4c-.2.2-.4.2-.6.2zM2.3 20.6c-.2 0-.4-.1-.6-.3-.3-.3-.3-.9 0-1.2L19.1 1.7c.3-.3.9-.3 1.2 0s.3.9 0 1.2L2.9 20.3c-.2.2-.4.3-.6.3zM7.7 20.6c-.2 0-.4-.1-.6-.3-.3-.3-.3-.9 0-1.2l12-12c.3-.3.9-.3 1.2 0 .3.3.3.9 0 1.2l-12 12c-.1.2-.4.3-.6.3zM13.2 20.6c-.2 0-.4-.1-.6-.3-.3-.3-.3-.9 0-1.2l6.5-6.5c.3-.3.9-.3 1.2 0s.3.9 0 1.2l-6.5 6.5c-.2.2-.4.3-.6.3zM18.6 20.6c-.2 0-.4-.1-.6-.3-.3-.3-.3-.9 0-1.2l1.1-1.1c.3-.3.9-.3 1.2 0 .3.3.3.9 0 1.2l-1.1 1.1c-.1.2-.4.3-.6.3zM2.3 9.7c-.3 0-.5-.1-.7-.3-.3-.3-.3-.9 0-1.2l6.5-6.5c.3-.3.9-.3 1.2 0s.3.9 0 1.2L2.9 9.4c-.2.2-.4.3-.6.3zM2.3 15.1c-.2 0-.4-.1-.6-.3-.3-.3-.3-.9 0-1.2l12-12c.3-.3.9-.3 1.2 0 .3.3.3.9 0 1.2l-12 12c-.2.3-.4.3-.6.3z"></path>
+            </svg> Patterns </a>
+    </li>
+    <li class="uploads">
+        <a href="#">
+            <svg viewBox="0 0 22 22">
+                <path d="M18.7 6.2l-7-6s-.1-.1-.2-.1l-.1-.1c-.2-.1-.5-.1-.7 0 0 0-.1 0-.1.1-.1 0-.1.1-.2.1l-7 6c-.4.4-.5 1-.1 1.4.4.4 1 .5 1.4.1L10 3.2V19c0 .6.4 1 1 1s1-.4 1-1V3.2l5.3 4.6c.2.1.5.2.7.2.3 0 .6-.1.8-.3.3-.5.3-1.1-.1-1.5z"></path>
+            </svg> Uploads </a>
+            <div class="uploadProgressPorthole">
+                <div class="uploadProgressPortholeFill"></div>
+            </div>
+    </li>
+    <div id="tool_tab_close">
+      <li class="images">
+            <div id="images_menu_btn"><i class="arrow fa fa-picture-o" style="font-size: 20px;"></i></div> Close 
+      </li> 
+    </div>
+  </div>
+  <div id="tab_contents">
+    <div id="tab_shapes" class="tab_content on">
+      <div id="shape_buttons">
+        <div class="tool_button loaded" id="shapelib_location" title="location">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="M500,10c-219.3,0-397,164.5-397,367.5C103,683.7,433.8,990,500,990c66.2,0,397-306.3,397-612.5C897,174.5,719.3,10,500,10z M500,598c-109.6,0-198.5-87.8-198.5-196c0-108.2,88.9-196,198.5-196c109.6,0,198.5,87.8,198.5,196C698.5,510.2,609.6,598,500,598z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_donut" title="donut">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,150l0,0c0,-82.29042 66.70958,-149 149,-149l0,0c39.51724,0 77.41599,15.69816 105.35889,43.64108c27.94293,27.94293 43.64111,65.84165 43.64111,105.35892l0,0c0,82.29041 -66.70958,149 -149,149l0,0c-82.29041,0 -149,-66.70959 -149,-149zm74.5,0l0,0c0,41.1452 33.35481,74.5 74.5,74.5c41.14522,0 74.5,-33.3548 74.5,-74.5c0,-41.1452 -33.3548,-74.5 -74.5,-74.5l0,0c-41.14519,0 -74.5,33.35481 -74.5,74.5z">
+              </path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_triangle" title="triangle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,280.375l149,-260.75l149,260.75z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_right_triangle" title="right_triangle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,299l0,-298l298,298z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_diamond" title="diamond">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,150l149,-149l149,149l-149,149l-149,-149z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_pentagon" title="pentagon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1.00035,116.97758l148.99963,-108.4053l148.99998,108.4053l-56.91267,175.4042l-184.1741,0l-56.91284,-175.4042z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_hexagon" title="hexagon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,149.99944l63.85715,-127.71428l170.28572,0l63.85713,127.71428l-63.85713,127.71428l-170.28572,0l-63.85715,-127.71428z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_septagon1" title="septagon1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m0.99917,191.06511l29.51249,-127.7108l119.48833,-56.83673l119.48836,56.83673l29.51303,127.7108l-82.69087,102.41679l-132.62103,0l-82.69031,-102.41679z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_heptagon" title="heptagon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,88.28171l87.28172,-87.28171l123.43653,0l87.28172,87.28171l0,123.43654l-87.28172,87.28172l-123.43653,0l-87.28172,-87.28172l0,-123.43654z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_decagon" title="decagon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,150.00093l28.45646,-88.40318l74.49956,-54.63682l92.08794,0l74.50002,54.63682l28.45599,88.40318l-28.45599,88.40318l-74.50002,54.63681l-92.08794,0l-74.49956,-54.63681l-28.45646,-88.40318z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_dodecagon" title="dodecagon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,110.07421l39.92579,-69.14842l69.14842,-39.92579l79.85159,0l69.14842,39.92579l39.92578,69.14842l0,79.85159l-39.92578,69.14842l-69.14842,39.92578l-79.85159,0l-69.14842,-39.92578l-39.92579,-69.14842l0,-79.85159z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_trapezoid" title="trapezoid">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m1,299l55.875,-298l186.25001,0l55.87498,298z"></path>
+            </svg>
+          </svg>
+        </div>
+        <div class="tool_button loaded" id="shapelib_dialog_balloon_1" title="dialog_balloon_1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <svg viewBox="-15 -15 330 330">
+              <path fill="#333" stroke="transparent" stroke-width="10" d="m0.99786,35.96579l0,0c0,-19.31077 15.28761,-34.96524 34.14583,-34.96524l15.52084,0l0,0l74.50001,0l139.68748,0c9.05606,0 17.74118,3.68382 24.14478,10.24108c6.40356,6.55726 10.00107,15.45081 10.00107,24.72416l0,87.41311l0,0l0,52.44785l0,0c0,19.31078 -15.2876,34.96524 -34.14584,34.96524l-139.68748,0l-97.32507,88.90848l22.82506,-88.90848l-15.52084,0c-18.85822,0 -34.14583,-15.65446 -34.14583,-34.96524l0,0l0,-52.44785l0,0z"></path>
+            </svg>
+          </svg>
+        </div>        
+      </div>
+    </div>
+    <div id="tab_images" class="tab_content">
+        <img draggable="true" src="assets_lib/images/img_nature_1_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_1')" />
+        <img draggable="true" src="assets_lib/images/img_nature_2_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_2')"/>
+        <img draggable="true" src="assets_lib/images/img_nature_3_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_3')"/>
+        <img draggable="true" src="assets_lib/images/img_nature_4_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_4')"/>
+        <img draggable="true" src="assets_lib/images/img_nature_5_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_5')"/>
+        <img draggable="true" src="assets_lib/images/img_nature_6_tn" onclick="methodDraw.addImage('assets_lib/images/img_nature_6')"/>
+    </div>
+    <div id="tab_text" class="tab_content">
+        <img src="temp/bc_template-1.jpg" width="95%" onclick="methodDraw.loadTemplate('temp/bc_template-1.svg')" />
+        <img src="temp/bc_template-2.jpg" width="95%" onclick="methodDraw.loadTemplate('temp/bc_template-2.svg')" />       
+    </div>     
+    <div id="tab_patterns" class="tab_content">
+        Patterns
+    </div>   
+    <div id="tab_uploads" class="tab_content">
+        Uploads
+    </div>
+  </div>
+</div>
+
+<div id="workarea">
+<div id="svgcanvas" style="position:relative">
+
+</div>
+</div>
+
+<div id="logo_holder" style="position: absolute;left:40px; top:36px;">
+  <img src="images/Logo.png" width="20%" height="25%" />
+</div>
+<!--
+<div style="position: absolute;left:200px; top:36px; width: 200px; z-index: 50;">
+  <div class="btn_cont shadow hover_shadow"><i class="arrow fa fa-folder-open-o"></i></div>
+  <div class="btn_cont shadow hover_shadow"><i class="arrow fa fa-save"></i></div>
+  <div id="tab_btn" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-picture-o"></i></div>
+</div>
+-->
+
+<div style="position: absolute;left:45px; bottom:36px;  z-index: 50;">
+  <div id="tab_btn" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-picture-o"></i></div>
+</div>
+
+<div id="zoom_bar">
+    <table align="Center"><tr>
+      <td>
+      <div class="shadow hover_shadow" style="border-radius: 25px;background-color: #fff;display: inline-block;padding: 5px;">
+        <div id="tool_zoomout" class="zoom_btn_cont"><i class="arrow fa fa-minus"></i></div>
+        <div id="zoom" style="float: left; width: 50px;text-align: center; padding: 5px; margin-top: 8px;">100%</div>
+        <div id="tool_zoomin" class="zoom_btn_cont"><i class="arrow fa fa-plus"></i></div>        
+      </div>
+    </td></tr></table>
+</div>
+
+<div id="bottom_bar" style="position: absolute;left:200px; bottom:36px;">
+      
+</div>
+
+<div id="menu_bar">
+  <table align="Center"><tr><td>
+  <div class="edit-btns">
+    <div id="tool_undo" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-undo"></i></div>
+    <div id="tool_redo" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-repeat"></i></div>
+    <div id="tool_clone" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-clone"></i></div>
+    <div id="tool_move_down" class="btn_cont shadow hover_shadow"><i class="pad icon-layers"></i><i class="arrow fa fa-long-arrow-down"></i></div>
+    <div id="tool_move_up" class="btn_cont shadow hover_shadow"><i class="pad icon-layers"></i><i class="arrow fa fa-long-arrow-up"></i></div>
+    <div id="tool_delete" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-trash-o"></i></div>
+    <div id="tool_group" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-object-group"></i></div>
+    <div id="tool_ungroup" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-object-ungroup"></i></div>
+    <div id="tool_save" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-save"></i></div>
+    <div id="tool_pdf" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-file-pdf-o"></i></div>
+    <div id="tool_open" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-file-pdf-o"></i></div>
+<!--    <div class="menu">
+      <div class="menu_title shadow hover_shadow"><i class="arrow fa fa-cog"></i></div>
+      <div class="menu_list" id="view_menu">
+          <div class="menu_item" id="tool_rulers">View Rulers</div>
+          <div class="menu_item" id="tool_wireframe">View Wireframe</div>
+          <div class="menu_item" id="tool_snap">Snap to Grid</div>
+          <div class="separator"></div>
+          <div class="menu_item" id="tool_source">Source... <span class="shortcut">⌘U</span></div>
+      </div>
+    </div>
+
+    
+      <div id="view_menu" class="btn_cont shadow hover_shadow"><i class="arrow fa fa-cog"></i></div>
+      <div class="menu_list" id="view_menu">
+          <div class="menu_item push_button_pressed" id="tool_rulers">View Rulers</div>
+          <div class="menu_item" id="tool_wireframe">View Wireframe</div>
+          <div class="menu_item" id="tool_snap">Snap to Grid</div>
+          <div class="separator"></div>
+          <div class="menu_item" id="tool_source">Source... <span class="shortcut">⌘U</span></div>
+      </div>
+    -->
+
+    <!--<button id="tool_undo" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Undo"><i class="arrow fa fa-undo"></i></button>
+    <button id="tool_redo" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Redo"><i class="arrow fa fa-repeat"></i></button>
+    <button id="tool_clone" type="button" class="btn btn-default disabled" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Duplicate layer"><i class="fa fa-clone"></i></button>
+    <button id="tool_move_down" type="button" class="btn btn-default disabled" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Move layer back"><i class="pad icon-layers"></i><i class="arrow fa fa-long-arrow-down"></i></button>   
+    <button id="tool_move_up" type="button" class="btn btn-default disabled" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Move layer forward"><i class="pad icon-layers"></i><i class="arrow fa fa-long-arrow-up"></i></button>
+    <button id="tool_delete" type="button" class="btn btn-default trash disabled" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete layer"><i class="fa fa-trash-o"></i></button>
+    <button id="tool_group" type="button" class="btn btn-default group" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Group"><i class="fa fa-object-group"></i></button>
+    <button id="tool_ungroup" type="button" class="btn btn-default ungroup" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Ungroup"><i class="fa fa-object-ungroup"></i></button>-->        
+  </div>
+
+<!--
+  <a class="menu">
+    <div class="menu_title" id="logo"></div>
+    <div class="menu_list">
+      <div id="tool_about" class="menu_item">About this Editor...</div>
+      <div class="separator"></div>
+      <div id="tool_about" class="menu_item">Keyboard Shortcuts...</div>
+    </div>
+  </a>
+  
+  <div class="menu">
+    <div class="menu_title">File</div>
+    <div class="menu_list" id="file_menu"> 
+      <div id="tool_clear" class="menu_item">New Document</div>
+      <div id="tool_open" class="menu_item" style="display: none;"><div id="fileinputs"></div>Open SVG...</div>
+      <div id="tool_import" class="menu_item" style="display: none;"><div id="fileinputs_import"></div>Import Image...</div>
+      <div id="tool_save" class="menu_item">Save Image... <span class="shortcut">⌘S</span></div>
+      <div id="tool_export" class="menu_item">Export as PNG</div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu_title">Edit</div>
+    <div class="menu_list" id="edit_menu">
+      <div class="menu_item" id="tool_undo">Undo <span class="shortcut">⌘Z</span></div>
+      <div class="menu_item" id="tool_redo">Redo <span class="shortcut">⌘Y</span></div>
+      <div class="separator"></div>
+      <div class="menu_item action_selected disabled" id="tool_cut">Cut <span class="shortcut">⌘X</span></div>
+      <div class="menu_item action_selected disabled" id="tool_copy">Copy <span class="shortcut">⌘C</span></div>
+      <div class="menu_item action_selected disabled" id="tool_paste">Paste <span class="shortcut">⌘V</span></div>
+      <div class="menu_item action_selected disabled" id="tool_clone">Duplicate <span class="shortcut">⌘D</span></div>
+      <div class="menu_item action_selected disabled" id="tool_delete">Delete <span>⌫</span></div>
+    </div>
+  </div>
+  
+  <div class="menu">
+    <div class="menu_title">Object</div>
+    <div class="menu_list"  id="object_menu">
+      <div class="menu_item action_selected disabled" id="tool_move_top">Bring to Front <span class="shortcut">⌘⇧↑</span></div>
+      <div class="menu_item action_selected disabled" id="tool_move_up">Bring Forward <span class="shortcut">⌘↑</span></div>
+      <div class="menu_item action_selected disabled" id="tool_move_down">Send Backward <span class="shortcut">⌘↓</span></div>
+      <div class="menu_item action_selected disabled" id="tool_move_bottom">Send to Back <span class="shortcut">⌘⇧↓</span></div>
+      <div class="separator"></div>
+      <div class="menu_item action_multi_selected disabled" id="tool_group">Group Elements <span class="shortcut">⌘G</span></div>
+      <div class="menu_item action_group_selected disabled" id="tool_ungroup">Ungroup Elements <span class="shortcut">⌘⇧G</span></div>
+      <div class="separator"></div>
+      <div class="menu_item action_path_convert_selected disabled" id="tool_topath">Convert to Path</div>
+      <div class="menu_item action_path_selected disabled" id="tool_reorient">Reorient path</div>
+    </div>
+  </div>
+  -->
+
+  
+  </td></tr></table>
+</div>
+
+<div id="tools_top" class="tools_panel">
+
+  <div id="canvas_panel" class="context_panel">
+    
+    <h4 class="clearfix">Canvas</h4>
+    
+<!--    <label data-title="Change canvas width">
+      <input size="3" id="canvas_width" type="text" pattern="[0-9]*" />
+      <span class="icon_label">Width</span>
+    </label>
+    <label data-title="Change canvas height">
+      <input id="canvas_height" size="3" type="text" pattern="[0-9]*" />
+      <span class="icon_label">Height</span>
+    </label>-->
+        
+    
+    <label data-title="Change canvas color" class="draginput">
+      <span>Color</span>
+      <div id="color_canvas_tools">
+        <div class="color_tool active" id="tool_canvas">
+          <div class="color_block">
+            <div id="canvas_bg"></div>
+            <div id="canvas_color"></div>
+          </div>
+        </div>
+      </div>
+    </label>
+
+      <div class="menu_list" id="view_menu">
+          <div class="menu_item" id="tool_rulers">View Rulers</div>
+          <div class="menu_item" id="tool_wireframe">View Wireframe</div>
+          <div class="menu_item" id="tool_snap">Snap to Grid</div>
+      </div>    
+
+<!--    <div class="draginput">
+      <span>Sizes</span>
+      <select id="resolution">
+        <option id="selectedPredefined" selected="selected">Custom</option>
+        <option>640x480</option>
+        <option>800x600</option>
+        <option>1024x768</option>
+        <option>1280x960</option>
+        <option>1600x1200</option>
+        <option id="fitToContent" value="content">Fit to Content</option>
+      </select>
+      <div class="caret"></div>
+      <label id="resolution_label">Custom</label>
+    </div>-->
+
+  </div>
+  
+  <div id="rect_panel" class="context_panel">
+    <h4 class="clearfix">Rectangle</h4>
+    <label>
+      <input id="rect_x" class="attr_changer" data-title="Change X coordinate" size="3" data-attr="x" pattern="[0-9]*" />
+      <span>X</span> 
+    </label>
+    <label>
+      <input id="rect_y" class="attr_changer" data-title="Change Y coordinate" size="3" data-attr="y" pattern="[0-9]*" />
+      <span>Y</span> 
+    </label>
+    <label id="rect_width_tool attr_changer" data-title="Change rectangle width">
+      <input id="rect_width" class="attr_changer" size="3" data-attr="width" type="text" pattern="[0-9]*" />
+      <span class="icon_label">Width</span>
+    </label>
+    <label id="rect_height_tool" data-title="Change rectangle height">
+      <input id="rect_height" class="attr_changer" size="3" data-attr="height" type="text" pattern="[0-9]*" />
+      <span class="icon_label">Height</span>
+    </label>
+  </div>
+  
+  <div id="path_panel" class="context_panel clearfix">
+    <h4 class="clearfix">Path</h4>
+    <label>
+      <input id="path_x" class="attr_changer" data-title="Change ellipse's cx coordinate" size="3" data-attr="x" pattern="[0-9]*" />
+      <span>X</span>
+    </label>
+    <label>
+      <input id="path_y" class="attr_changer" data-title="Change ellipse's cy coordinate" size="3" data-attr="y" pattern="[0-9]*" />
+      <span>Y</span>
+    </label>
+  </div>
+
+  <div id="image_panel" class="context_panel clearfix">
+  <h4>Image</h4>
+    <label>
+      <input id="image_x" class="attr_changer" data-title="Change X coordinate" size="3" data-attr="x"  pattern="[0-9]*"/>
+      <span>X</span> 
+    </label>
+    <label>
+      <input id="image_y" class="attr_changer" data-title="Change Y coordinate" size="3" data-attr="y"  pattern="[0-9]*"/>
+      <span>Y</span> 
+    </label>
+    <label>
+      <input id="image_width" class="attr_changer" data-title="Change image width" size="3" data-attr="width" pattern="[0-9]*" />
+      <span class="icon_label">Width</span>
+    </label>
+    <label>
+      <input id="image_height" class="attr_changer" data-title="Change image height" size="3" data-attr="height" pattern="[0-9]*" />
+      <span class="icon_label">Height</span>
+    </label>
+  </div>
+  
+  <div id="circle_panel" class="context_panel">
+    <h4>Circle</h4>
+    <label id="tool_circle_cx">
+      <span>Center X</span>
+      <input id="circle_cx" class="attr_changer" title="Change circle's cx coordinate" size="3" data-attr="cx"/>
+    </label>
+    <label id="tool_circle_cy">
+      <span>Center Y</span>
+      <input id="circle_cy" class="attr_changer" title="Change circle's cy coordinate" size="3" data-attr="cy"/>
+    </label>
+    <label id="tool_circle_r">
+      <span>Radius</span>
+      <input id="circle_r" class="attr_changer" title="Change circle's radius" size="3" data-attr="r"/>
+    </label>
+  </div>
+
+  <div id="ellipse_panel" class="context_panel clearfix">
+    <h4>Ellipse</h4>
+    <label id="tool_ellipse_cx">
+      <input id="ellipse_cx" class="attr_changer" data-title="Change ellipse's cx coordinate" size="3" data-attr="cx" pattern="[0-9]*" />
+      <span>X</span>
+    </label>
+    <label id="tool_ellipse_cy">
+      <input id="ellipse_cy" class="attr_changer" data-title="Change ellipse's cy coordinate" size="3" data-attr="cy" pattern="[0-9]*" />
+      <span>Y</span>
+    </label>
+    <label id="tool_ellipse_rx">
+      <input id="ellipse_rx" class="attr_changer" data-title="Change ellipse's x radius" size="3" data-attr="rx" pattern="[0-9]*" />
+      <span>Radius X</span>
+    </label>
+    <label id="tool_ellipse_ry">
+      <input id="ellipse_ry" class="attr_changer" data-title="Change ellipse's y radius" size="3" data-attr="ry" pattern="[0-9]*" />
+      <span>Radius Y</span>
+    </label>
+  </div>
+
+  <div id="line_panel" class="context_panel clearfix">
+    <h4>Line</h4>
+    <label id="tool_line_x1">
+      <input id="line_x1" class="attr_changer" data-title="Change line's starting x coordinate" size="3" data-attr="x1" pattern="[0-9]*" />
+      <span>Start X</span>
+    </label>
+    <label id="tool_line_y1">
+      <input id="line_y1" class="attr_changer" data-title="Change line's starting y coordinate" size="3" data-attr="y1" pattern="[0-9]*" />
+      <span>Start Y</span>
+    </label>
+    <label id="tool_line_x2">
+      <input id="line_x2" class="attr_changer" data-title="Change line's ending x coordinate" size="3" data-attr="x2"   pattern="[0-9]*" />
+      <span>End X</span>
+    </label>
+    <label id="tool_line_y2">
+      <input id="line_y2" class="attr_changer" data-title="Change line's ending y coordinate" size="3" data-attr="y2"   pattern="[0-9]*" />
+      <span>End Y</span>
+    </label>
+  </div>
+
+  <div id="text_panel" class="context_panel">
+    <h4>Text</h4>
+    <label>
+      <input id="text_x" class="attr_changer" data-title="Change text x coordinate" size="3" data-attr="x" pattern="[0-9]*" />
+      <span>X</span>
+    </label>
+    <label>
+      <input id="text_y" class="attr_changer" data-title="Change text y coordinate" size="3" data-attr="y" pattern="[0-9]*" />
+      <span>Y</span>
+    </label>
+    
+    <div class="toolset draginput select twocol" id="tool_font_family">
+        <!-- Font family -->
+      <span>Font</span>
+      <div id="preview_font" style="font-family: Helvetica, Arial, sans-serif;">Helvetica</div>
+      <div class="caret"></div>
+      <input id="font_family" data-title="Change Font Family" size="12" type="hidden" />
+      <select id="font_family_dropdown">
+          <option value="Arvo, sans-serif">Arvo</option>
+          <option value="'Courier New', Courier, monospace">Courier</option>
+          <option value="Euphoria, sans-serif">Euphoria</option>
+          <option value="Georgia, Times, 'Times New Roman', serif">Georgia</option>
+          <option value="Helvetica, Arial, sans-serif" selected="selected">Helvetica</option>
+          <option value="Junction, sans-serif">Junction</option>
+          <option value="'League Gothic', sans-serif">League Gothic</option>
+          <option value="Oswald, sans-serif">Oswald</option>
+          <option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino</option>
+          <option value="'Trebuchet MS', Gadget, sans-serif">Trebuchet</option>
+          <option value="'Shadows Into Light', serif">Shadows Into Light</option>
+          <option value="'Simonetta', serif">Simonetta</option>
+          <option value="'Times New Roman', Times, serif">Times</option>
+      </select>
+      <div class="tool_button" id="tool_bold" data-title="Bold Text [B]">B</div>
+      <div class="tool_button" id="tool_italic" data-title="Italic Text [I]">i</div>
+    </div>
+
+    <label id="tool_font_size" data-title="Change Font Size">
+      <input id="font_size" size="3" value="0" />
+      <span id="font_sizeLabel" class="icon_label">Font Size</span>
+    </label>
+    <!-- Not visible, but still used -->
+    <input id="text" type="text" size="35"/>
+  </div>
+
+  <!-- formerly gsvg_panel -->
+  <div id="container_panel" class="context_panel clearfix">
+  </div>
+  
+  <div id="use_panel" class="context_panel clearfix">
+    <div class="tool_button clearfix" id="tool_unlink_use" data-title="Break link to reference element (make unique)">Break link reference</div>
+  </div>
+  
+  <div id="g_panel" class="context_panel clearfix">
+    <h4>Group</h4>
+    <label>
+      <input id="g_x" class="attr_changer" data-title="Change groups's x coordinate" size="3" data-attr="x" pattern="[0-9]*" />
+      <span>X</span>
+    </label>
+    <label>
+      <input id="g_y" class="attr_changer" data-title="Change groups's y coordinate" size="3" data-attr="y" pattern="[0-9]*" />
+      <span>Y</span>
+    </label>
+  </div>
+  
+  <div id="path_node_panel" class="context_panel clearfix">
+    <h4>Edit Path</h4>
+
+    <label id="tool_node_x">
+      <input id="path_node_x" class="attr_changer" data-title="Change node's x coordinate" size="3" data-attr="x" />
+      <span>X</span>
+    </label>
+    <label id="tool_node_y">
+      <input id="path_node_y" class="attr_changer" data-title="Change node's y coordinate" size="3" data-attr="y" />
+      <span>Y</span>
+    </label>
+    
+    <div id="segment_type" class="draginput label">
+      <span>Segment Type</span>
+      <select id="seg_type" data-title="Change Segment type">
+        <option id="straight_segments" selected="selected" value="4">Straight</option>
+        <option id="curve_segments" value="6">Curve</option>
+      </select>
+      <div class="caret"></div>
+      <label id="seg_type_label">Straight</label>
+    </div>
+    
+    <!--
+    <label class="draginput checkbox" data-title="Link Control Points">
+      <span>Linked Control Points</span>
+      <div class="push_bottom"><input type="checkbox" id="tool_node_link" checked="checked" /></div>
+    </label>
+  -->
+    
+    <div class="clearfix"></div>
+    <div class="tool_button" id="tool_node_clone" title="Adds a node">Add Node</div>
+    <div class="tool_button" id="tool_node_delete" title="Delete Node">Delete Node</div>
+    <div class="tool_button" id="tool_openclose_path" title="Open/close sub-path">Open Path</div>
+    <!--<div class="tool_button" id="tool_add_subpath" title="Add sub-path"></div>-->
+  </div>
+  
+  <!-- Buttons when a single element is selected -->
+  <div id="selected_panel" class="context_panel">
+
+    <label id="tool_angle" data-title="Change rotation angle" class="draginput">
+      <input id="angle" class="attr_changer" size="2" value="0" data-attr="transform" data-min="-180" data-max="180" type="text"/>
+      <span class="icon_label">Rotation</span>
+      <div id="tool_angle_indicator">
+        <div id="tool_angle_indicator_cursor"></div>
+      </div>
+    </label>
+    
+      <label class="toolset" id="tool_opacity" data-title="Change selected item opacity">
+        <input id="group_opacity" class="attr_changer" data-attr="opacity" data-multiplier="0.01" size="3" value="100" step="5" min="0" max="100" />
+        <span id="group_opacityLabel" class="icon_label">Opacity</span>
+      </label>
+    
+    <div class="toolset" id="tool_blur" data-title="Change gaussian blur value">
+      <label>
+        <input id="blur" size="2" value="0" step=".1"  min="0" max="10" />
+        <span class="icon_label">Blur</span>
+      </label>
+    </div>
+    
+    <label id="cornerRadiusLabel" data-title="Change Rectangle Corner Radius">
+      <input id="rect_rx" size="3" value="0" data-attr="rx" class="attr_changer" type="text" pattern="[0-9]*" />
+      <span class="icon_label">Roundness</span>
+    </label>
+    
+    <div class="clearfix"></div>
+    <div id="align_tools">
+      <h4>Align</h4>
+      <div class="toolset align_buttons" id="tool_position">
+          <label>
+            <div class="col last clear" id="position_opts">
+              <div class="draginput_cell" id="tool_posleft" title="Align Left"></div>
+              <div class="draginput_cell" id="tool_poscenter" title="Align Center"></div>
+              <div class="draginput_cell" id="tool_posright" title="Align Right"></div>
+              <div class="draginput_cell" id="tool_postop" title="Align Top"></div>
+              <div class="draginput_cell" id="tool_posmiddle" title="Align Middle"></div>
+              <div class="draginput_cell" id="tool_posbottom" title="Align Bottom"></div>
+            </div>
+          </label>
+      </div>    
+    </div>
+  </div>
+  
+  <!-- Buttons when multiple elements are selected -->
+  <div id="multiselected_panel" class="context_panel clearfix">
+    <h4 class="hidable">Multiple Elements</h4>
+    
+    <div class="toolset align_buttons" style="position: relative">
+      <label id="tool_align_relative" style="margin-top: 10px;"> 
+        <select id="align_relative_to" title="Align relative to ...">
+        <option id="selected_objects" value="selected">Align to objects</option>
+        <option id="page" value="page">Align to page</option>
+        </select>
+      </label>
+      <h4>.</h4>
+        <div class="col last clear">
+          <div class="draginput_cell" id="tool_alignleft" title="Align Left"></div>
+          <div class="draginput_cell" id="tool_aligncenter" title="Align Center"></div>
+          <div class="draginput_cell" id="tool_alignright" title="Align Right"></div>
+          <div class="draginput_cell" id="tool_aligntop" title="Align Top"></div>
+          <div class="draginput_cell" id="tool_alignmiddle" title="Align Middle"></div>
+          <div class="draginput_cell" id="tool_alignbottom" title="Align Bottom"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+  </div>
+  
+  <div id="stroke_panel" class="context_panel clearfix">
+    <div class="clearfix"></div>
+    <h4>Stroke</h4>
+    <div class="toolset" data-title="Change stroke">
+      <label>
+        <input id="stroke_width" size="2" value="5" data-attr="stroke-width" min="0" max="99" step="1" />
+        <span class="icon_label">Stroke Width</span>
+      </label>
+    </div>
+    <div class="stroke_tool">
+      <label class="draginput" style="border: 1px solid #ddd;"> 
+      <span>Stroke Dash</span>
+      <select id="stroke_style" data-title="Change stroke dash style">
+        <option selected="selected" value="none">—</option>
+        <option value="2,2">···</option>
+        <option value="5,5">- -</option>
+        <option value="5,2,2,2">-·-</option>
+        <option value="5,2,2,2,2,2">-··-</option>
+      </select>
+      <div class="caret"></div>
+      <label id="stroke_style_label">—</label>
+      </label>
+    </div>
+    
+    <label style="display: none;">
+      <span class="icon_label">Stroke Join</span>
+    </label>
+    
+    <label  style="display: none;">
+      <span class="icon_label">Stroke Cap</span>
+    </label>
+  </div>
+
+</div> <!-- tools_top -->
+  <div id="cur_context_panel">
+    
+  </div>
+
+
+<div id="tools_left" class="tools_panel" align="Center">
+  <div class="tool_button" id="tool_select" title="Select Tool [V]"></div>
+  <!--<div class="tool_button" id="tool_text" title="Text Tool [T]"></div>-->
+  <div class="tool_button" id="tool_multitext" title="Text Tool [T]"></div>
+  <div class="tool_button" id="tool_fhpath" title="Pencil Tool [P]"></div>
+  <div class="tool_button" id="tool_line" title="Line Tool [L]"></div>
+  <div class="tool_button" id="tool_rect" title="Square/Rect Tool [R]"></div>
+  <div class="tool_button" id="tool_ellipse" title="Ellipse/Circle Tool [C]"></div>
+  <div class="tool_button" id="tool_path" title="Path Tool [P]"></div>
+   <div class="tool_button" id="tool_zoom" title="Zoom Tool [Z]"></div> <!---->
+  
+
+  <div id="color_tools">
+        <div id="tool_switch" title="Switch stroke and fill colors [X]">
+          <i class="arrow fa fa-arrows-v"></i>
+        </div>
+        <div class="color_tool active" id="tool_fill">
+          <label class="icon_label" title="Change fill color"></label>
+          <div class="color_block">
+            <div id="fill_bg"></div>
+            <div id="fill_color" class="color_block"></div>
+          </div>
+        </div>
+
+        <div class="color_tool" id="tool_stroke">
+            <label class="icon_label" title="Change stroke color"></label>
+          <div class="color_block">
+            <div id="stroke_bg"></div>
+            <div id="stroke_color" class="color_block" title="Change stroke color"></div>
+          </div>
+        </div>
+  </div>
+
+</div> <!-- tools_left -->
+
+<div>
+
+</div>
+
+<!--<div id="tools_bottom" class="tools_panel"> -->
+
+    <!-- Zoom buttons -->
+    <!--
+  <div id="zoom_panel" class="toolset" title="Change zoom level">
+    <div class="draginput select" id="zoom_label">
+      <span  id="zoomLabel" class="zoom_tool icon_label"></span>
+      <select id="zoom_select">
+        <option value="6">6%</option>
+        <option value="12">12%</option>
+        <option value="16">16%</option>
+        <option value="25">25%</option>
+        <option value="50">50%</option>
+        <option value="75">75%</option>
+        <option value="100"  selected="selected">100%</option>
+        <option value="150">150%</option>
+        <option value="200">200%</option>
+        <option value="300">300%</option>
+        <option value="400">400%</option>
+        <option value="600">600%</option>
+        <option value="800">800%</option>
+        <option value="1600">1600%</option>
+      </select>
+      <div class="caret"></div>
+      <input id="zoom" size="3" value="100%" type="text" readonly="readonly" />
+    </div>
+  </div>
+
+  <div id="tools_bottom_3">
+    <div id="palette" title="Click to change fill color, shift-click to change stroke color"></div>
+  </div>
+  
+</div>-->
+
+<!-- hidden divs -->
+<div id="color_picker"></div>
+
+</div> <!-- svg_editor -->
+</div> <!-- svg_editor_cont -->
+<div id="svg_source_editor">
+  <div id="svg_source_overlay"></div>
+  <div id="svg_source_container">
+    <div id="save_output_btns">
+      <p id="copy_save_note">Copy the contents of this box into a text editor, then save the file with a .svg extension.</p>
+      <button id="copy_save_done">Done</button>
+    </div>
+    <form>
+      <textarea id="svg_source_textarea" spellcheck="false"></textarea>
+    </form>
+    <div id="tool_source_back" class="toolbar_button">
+      <button id="tool_source_cancel" class="cancel">Cancel</button>
+      <button id="tool_source_save" class="ok">Apply Changes</button>
+    </div>
+  </div>
+</div>
+
+<div id="base_unit_container">
+  <select id="base_unit">
+    <option value="px">Pixels</option>
+    <option value="cm">Centimeters</option>
+    <option value="mm">Millimeters</option>
+    <option value="in">Inches</option>
+    <option value="pt">Points</option>
+    <option value="pc">Picas</option>
+    <option value="em">Ems</option>
+    <option value="ex">Exs</option>
+  </select>
+</div>
+
+<div id="dialog_box">
+  <div id="dialog_box_overlay"></div>
+  <div id="dialog_container">
+    <div id="dialog_content"></div>
+    <div id="dialog_buttons"></div>
+  </div>
+</div>
+
+<ul id="cmenu_canvas" class="contextMenu">
+  <li><a href="#cut">Cut <span class="shortcut">⌘X;</span></a></li>
+  <li><a href="#copy">Copy<span class="shortcut">⌘C</span></a></li>
+  <li><a href="#paste">Paste<span class="shortcut">⌘V</span></a></li>
+  <li class="separator"><a href="#delete">Delete<span class="shortcut">⌫</span></a></li>
+  <li class="separator"><a href="#group">Group<span class="shortcut">⌘G</span></a></li>
+  <li><a href="#ungroup">Ungroup<span class="shortcut">⌘⇧G</span></a></li>
+  <li class="separator"><a href="#move_front">Bring to Front<span class="shortcut">⌘⇧↑</span></a></li>
+  <li><a href="#move_up">Bring Forward<span class="shortcut">⌘↑</span></a></li>
+  <li><a href="#move_down">Send Backward<span class="shortcut">⌘↓</span></a></li>
+  <li><a href="#move_back">Send to Back<span class="shortcut">⌘⇧↓</span></a></li>
+</ul>
+
+</body>
+</html>

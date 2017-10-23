@@ -1,0 +1,90 @@
+<svg width="525" height="300" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="#bf005f" id="canvas_background" height="302" width="527" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_10"/>
+  </g>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" height="122" width="29" y="-2.3" x="138.5" stroke-width="0" stroke="#000" fill="#ffffff"/>
+  <foreignObject stroke="#000" xml:space="preserve" id="svg_2" height="38.999999" width="148.999991" y="109.883" x="49.6275" stroke-width="0" fill="#4c4c4c">
+   <div stroke="null" id="div_svg_2">
+    <div style="vector-effect: non-scaling-stroke;" stroke="null" align="left" id="div_div_svg_2" contenteditable="true">
+     <p>
+      <span style="color:#ffffff">
+       <span style="font-size:20px">YOUR NAME</span>
+      </span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <path stroke="#000" id="svg_3" d="m137.10684,120.52376l15.91436,-24.30556l15.91435,24.30556l-31.82871,0z" stroke-opacity="null" stroke-width="0" fill="#bf005f"/>
+  <path id="svg_4" d="m31.2525,44.5665l0,0c0,-9.94112 8.05888,-18 18,-18l0,0c4.7739,0 9.35227,1.89642 12.72792,5.27208c3.37566,3.37566 5.27208,7.95402 5.27208,12.72792l0,0c0,9.94112 -8.05887,18 -18,18l0,0c-9.94112,0 -18,-8.05887 -18,-18zm9,0l0,0c0,4.97056 4.02945,9 9,9c4.97057,0 9,-4.02944 9,-9c0,-4.97056 -4.02943,-9 -9,-9l0,0c-4.97055,0 -9,4.02944 -9,9z" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff"/>
+  <foreignObject stroke="#000" xml:space="preserve" id="svg_5" height="39.999998" width="58.999997" y="23.88" x="72.8525" stroke-width="0" fill="#7f0000">
+   <div stroke="null" id="div_svg_5">
+    <div style="vector-effect: non-scaling-stroke;" stroke="null" align="left" id="div_div_svg_5" contenteditable="true">
+     <p>
+      <span style="color:#ffffff">
+       <strong>LOGO</strong>
+      </span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <line stroke="#7f003f" stroke-width="2" fill-opacity="0" stroke-linecap="null" stroke-linejoin="null" id="svg_9" y2="239.862306" x2="280.5" y1="108.700011" x1="280.5" fill="none"/>
+  <ellipse ry="23" rx="23" id="svg_6" cy="92.7" cx="280.5" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#7f003f"/>
+  <ellipse ry="23" rx="23" id="svg_7" cy="252.7" cx="280.5" stroke-opacity="null" stroke-width="0" fill="#7f003f" stroke="#000"/>
+  <ellipse ry="23" rx="23" id="svg_8" cy="172.7" cx="280.5" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#7f003f"/>
+  <foreignObject xml:space="preserve" id="svg_11" height="100" width="200" y="132.7" x="91.5" stroke-width="16" stroke="#005fbf" fill="none">
+   <div id="div_svg_11">
+    <div align="left" id="div_div_svg_11" contenteditable="true">
+     <p>
+      <span style="color:#ffffff">
+       <em>Designation</em>
+      </span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <path fill="#fff" stroke-width="0" d="m289.13351,252.74983l-3.82108,3.81983c-2.10893,2.11018 -5.53015,2.11018 -7.63944,0c-0.33225,-0.33131 -0.59217,-0.70462 -0.82042,-1.0896l1.77543,-1.77531c0.0844,-0.08511 0.18862,-0.13388 0.2882,-0.19133c0.12275,0.41936 0.33702,0.81637 0.66682,1.14621c1.05322,1.05407 2.76701,1.0526 3.81961,0l3.81987,-3.81974c1.05402,-1.05393 1.05402,-2.76732 0,-3.82045c-1.05264,-1.05313 -2.76599,-1.05313 -3.81987,0l-1.35835,1.35981c-1.1023,-0.42921 -2.28988,-0.5446 -3.44598,-0.37518l2.89452,-2.89444c2.11018,-2.10978 5.53051,-2.10978 7.64069,0c2.10915,2.10969 2.10915,5.53056 0,7.6402zm-10.10124,6.2811l-1.35933,1.35981c-1.05313,1.0526 -2.76701,1.0526 -3.82032,0c-1.05322,-1.05406 -1.05322,-2.76746 0,-3.82108l3.82032,-3.81983c1.05398,-1.05384 2.7667,-1.05384 3.81983,0c0.32905,0.32913 0.54354,0.72605 0.66744,1.14488c0.10016,-0.05821 0.20309,-0.10551 0.28744,-0.19l1.77531,-1.77459c-0.22679,-0.38649 -0.48804,-0.75847 -0.82043,-1.09014c-2.10875,-2.10978 -5.53028,-2.10978 -7.64006,0l-3.81975,3.81988c-2.10955,2.1104 -2.10955,5.53029 0,7.64051c2.10978,2.10911 5.53052,2.10911 7.64025,0l2.89528,-2.89506c-1.15672,0.1704 -2.34462,0.05402 -3.44599,-0.37438l0.00001,0z" id="svg_12" stroke="#000"/>
+  <path fill="#ffffff" stroke-width="0" stroke-opacity="null" d="m275.48143,169.51667l-6.01539,-6.01848c0.77642,-0.77643 1.55131,-1.55441 2.32928,-2.33238c0.35966,-0.35966 0.94005,-0.36583 1.30125,-0.0108l4.68636,4.69098c0.35812,0.35812 0.35812,0.94777 -0.00463,1.30897l-1.02649,1.02495l-0.95549,0.95549c-0.11731,0.11885 -0.22382,0.24543 -0.31489,0.38127zm4.94877,9.80337c-0.98481,-0.84743 -1.92949,-1.74735 -2.84639,-2.6627c-0.91535,-0.92153 -1.81218,-1.86312 -2.66116,-2.85257c-0.69462,-0.80267 -0.83046,-1.96499 -0.46771,-2.94363l-6.17439,-6.17593c-1.43709,1.47722 -1.2534,5.14018 0.32107,8.35857c0.6761,1.39233 1.55286,2.64881 2.45895,3.84356c0.90455,1.18548 1.89708,2.30613 2.9421,3.35886c1.0481,1.05119 2.16257,2.04835 3.35114,2.9529c1.19475,0.90918 2.45432,1.77976 3.83738,2.45432c3.22303,1.57292 6.88753,1.7458 8.36321,0.30717l-6.17593,-6.17592c-0.97864,0.36274 -2.14251,0.22845 -2.94827,-0.46463zm12.64977,1.82299l-4.68635,-4.6879c-0.35966,-0.35503 -0.94932,-0.35503 -1.30897,0.00463l-0.00309,0l-1.02958,1.02803l-0.94931,0.95395c-0.11732,0.11731 -0.24543,0.22073 -0.38127,0.31643l6.01385,6.01694c0.77797,-0.77952 1.5544,-1.5544 2.33392,-2.33083c0.36274,-0.35966 0.37046,-0.94159 0.0108,-1.30125z" id="svg_13" stroke="#000"/>
+  <path fill="#ffffff" stroke="#000" stroke-width="0" stroke-opacity="null" d="m280.52776,81.83424c-4.92828,0 -8.92169,3.69677 -8.92169,8.25874c0,6.88117 7.43399,13.76458 8.92169,13.76458c1.4877,0 8.92169,-6.88341 8.92169,-13.76458c0,-4.56197 -3.99341,-8.25874 -8.92169,-8.25874zm0,13.21399c-2.46302,0 -4.46085,-1.97311 -4.46085,-4.40466c0,-2.43156 1.99783,-4.40467 4.46085,-4.40467c2.46301,0 4.46084,1.97311 4.46084,4.40467c0,2.43155 -1.99783,4.40466 -4.46084,4.40466z" id="svg_14"/>
+  <foreignObject fill="#ffffff" stroke-width="0" x="313.535" y="63.208" width="186.000001" height="51.999998" id="svg_15" xml:space="preserve" stroke="#000">
+   <div id="div_svg_15" stroke="null">
+    <div contenteditable="true" id="div_div_svg_15" align="left" stroke="null" style="vector-effect: non-scaling-stroke;">
+     <p>
+      <span style="color:#ffffff">#45, N Block, Kuvempunagar
+       <br/>Mysore - 570023</span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <foreignObject fill="#ffffff" stroke="#000" stroke-width="0" x="313.5" y="144.4" width="200" height="100" id="svg_16" xml:space="preserve">
+   <div id="div_svg_16">
+    <div contenteditable="true" id="div_div_svg_16" align="left">
+     <p>
+      <span style="color:#ffffff">0821-4000048
+       <br/>8050247240</span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <foreignObject fill="#ffffff" stroke="#000" stroke-width="0" x="313.5" y="223.4" width="200" height="100" id="svg_17" xml:space="preserve">
+   <div id="div_svg_17">
+    <div contenteditable="true" id="div_div_svg_17" align="left">
+     <p>
+      <span style="color:#ffffff">www.testingurl.com
+       <br/>​​​​​​email@email.com</span>
+     </p>
+    </div>
+   </div>
+  </foreignObject>
+  <rect fill="#ffffff" stroke-width="0" stroke-opacity="null" x="77.5" y="287.699998" width="5" height="140.999995" id="svg_20" stroke="#000"/>
+  <rect fill="#ffffff" stroke-width="0" stroke-opacity="null" x="17.5" y="227.699998" width="5" height="140.999995" id="svg_22" stroke="#000"/>
+  <rect fill="#ffffff" stroke-width="0" stroke-opacity="null" x="37.5" y="247.699998" width="5" height="140.999995" id="svg_23" stroke="#000"/>
+  <rect fill="#ffffff" stroke-width="0" stroke-opacity="null" x="57.5" y="267.699998" width="5" height="140.999995" id="svg_24" stroke="#000"/>
+ </g>
+</svg>
